@@ -1,0 +1,23 @@
+<h1>Enter Text</h1>
+
+<p>You can get number of words by entering text: </p>
+
+<form #editorForm="ngForm"
+      (ngSubmit)="submit()"
+      [formGroup]="form">
+
+  <p>
+    <ckeditor [editor]="editor"
+              [config]="editorConfig"
+              [data]="data"
+              [(ngModel)]="data"
+              formControlName="data"
+              name="data">
+    </ckeditor>
+  </p>
+
+  <p>
+    <button type="submit" class="btn btn-primary">Count Words</button>
+  </p>
+
+</form>

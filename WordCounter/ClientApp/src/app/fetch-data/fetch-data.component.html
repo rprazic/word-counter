@@ -1,0 +1,24 @@
+<h1>Fetch Text</h1>
+
+<p>This component demonstrates fetching text from the server.</p>
+
+<p *ngIf="!textDatas"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="textDatas">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Text</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let textData of textDatas">
+      <td>{{ textData.id }}</td>
+      <td>{{ textData.text }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="countWords(textData)">Count Words</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
